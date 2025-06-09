@@ -1,20 +1,57 @@
+CREATE DATABASE locadora;
 
-INSERT INTO gerenciamento.endereço (bairro, cep, rua, cidade, numero) VALUES
-('Centro', 12345678, 'Rua das Flores', 'São Paulo', 123),
-('Jardim', 87654321, 'Avenida Principal', 'Rio de Janeiro', 456);
+CREATE SCHEMA gerenciamento;
 
-INSERT INTO gerenciamento.clientes (endereço, cpf, telefone, email) VALUES
-('Rua das Flores, 123, Centro, São Paulo', 12345678901, '(11) 98765-4321', 'pedro1@email.com'),
-('Avenida Principal, 456, Jardim, Rio de Janeiro', 98765432109, '(21) 91234-5678', 'duda2@email.com');
+CREATE TABLE gerenciamento.locacao (
+    id_locacao SERIAL PRIMARY KEY,
+    data_inicio DATE NOT NULL,
+    data_final DATE NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    id_cliente INT,
+    id_filme INT,
+    id_funcionario INT,
+    id_endereço INT,
+    FOREIGN KEY (id_cliente) REFERENCES gerenciamento.clientes(id_cliente),
+    FOREIGN KEY (id_filme) REFERENCES gerenciamento.filmes(id_filme),
+    FOREIGN KEY (id_funcionario) REFERENCES gerenciamento.funcionarios(id_funcionario),
+    FOREIGN KEY (id_endereço) REFERENCES gerenciamento.endereço(id_endereço)
+);
 
-INSERT INTO gerenciamento.funcionarios (cpf, cargo, nome) VALUES
-(11425235644, 'Atendente', 'Giovana'),
-(53461677388, 'Gerente', 'Duda');
+CREATE TABLE gerenciamento.clientes (
+    id_cliente SERIAL PRIMARY KEY,
+    endereço VARCHAR(200) NOT NULL,
+    cpf BIGINT NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
 
-INSERT INTO gerenciamento.filmes (titulo, disponivel, ano, categoria) VALUES
-('O Senhor dos Anéis', TRUE, 2001, 'Fantasia'),
-('Matrix', TRUE, 1999, 'Ficção Científica');
+CREATE TABLE gerenciamento.funcionarios (
+    id_funcionario SERIAL PRIMARY KEY,
+    cpf BIGINT NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    nome VARCHAR(100) NOT NULL
+);
 
-INSERT INTO gerenciamento.locacao (data_inicio, data_final, valor, id_cliente, id_filme, id_funcionario, id_endereço) VALUES
-('2025-05-16', '2025-05-20', 15.00, 1, 1, 1, 1), -- Cliente 1 aluga "O Senhor dos Anéis" com funcionário 1
-('2025-05-16', '2025-05-18', 12.00, 2, 2, 2, 2); -- Cliente 2 aluga "Matrix" com funcionário 2
+CREATE TABLE gerenciamento.filmes (
+    id_filme SERIAL PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    disponivel BOOLEAN NOT NULL,
+    ano INT NOT NULL,
+    categoria VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE gerenciamento.endereço (
+    id_endereço SERIAL PRIMARY KEY,
+    bairro VARCHAR(100) NOT NULL,
+    cep BIGINT NOT NULL,
+    rua VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    numero INT NOT NULL
+);
+
+
+
+
+
+
+
