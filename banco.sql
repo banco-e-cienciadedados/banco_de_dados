@@ -1,16 +1,15 @@
 CREATE USER admin_user WITH PASSWORD 'admin123';
 CREATE USER normal_user WITH PASSWORD 'normal123';
 
-GRANT ALL PRIVILEGES ON SCHEMA gerenciamento TO admin_user; --Coloca privilégios de criar tabelas, funções etc, porém ainda precisa de permissões para manipulá-las
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gerenciamento TO admin_user; --Garante privilégios para o usuário ter controle total dentro das tabelas que estão dentro do esquema gerenciamento
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA gerenciamento TO admin_user; --Fornece permissões sobre todas as sequências existentes em gerenciamento 
+GRANT ALL PRIVILEGES ON SCHEMA gerenciamento TO admin_user; 
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gerenciamento TO admin_user;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA gerenciamento TO admin_user; 
 
 
-GRANT USAGE ON SCHEMA gerenciamento TO normal_user; --Concede ao usuário leitura_user a permissão de uso do esquema
-GRANT SELECT ON ALL TABLES IN SCHEMA gerenciamento TO normal_user; --Concede ao usuário leitura_user a permissão de leitura (somente consulta) em todas as tabelas
+GRANT USAGE ON SCHEMA gerenciamento TO normal_user; 
+GRANT SELECT ON ALL TABLES IN SCHEMA gerenciamento TO normal_user;
 
 
--- Garante que permissões sejam propagadas para futuras tabelas
 ALTER DEFAULT PRIVILEGES IN SCHEMA gerenciamento
     GRANT SELECT ON TABLES TO normal_user;
 
