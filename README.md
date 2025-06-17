@@ -25,11 +25,11 @@
 
 ## Introdução
 
-A organização e o gerenciamento de dados são fundamentais para o bom funcionamento de qualquer empresa que lida com um grande volume de informações. No contexto das locadoras de veículos, por exemplo, é essencial manter o controle preciso sobre os veículos disponíveis, os clientes atendidos, as reservas realizadas e os pagamentos efetuados. Com isso em vista, este projeto de Banco de Dados tem como foco o desenvolvimento de um sistema de gestão para uma locadora, com o objetivo de otimizar o armazenamento, a recuperação e a manipulação dessas informações de forma eficiente, segura e estruturada.
+A organização e o gerenciamento de dados são fundamentais para o bom funcionamento de qualquer empresa que lida com um grande volume de informações. No contexto das locadoras de files, por exemplo, é essencial manter o controle preciso sobre os filmes disponíveis, os clientes atendidos e as reservas realizadas. Com isso em vista, este projeto de Banco de Dados tem como foco o desenvolvimento de um sistema de gestão para uma locadora, com o objetivo de otimizar o armazenamento, a recuperação e a manipulação dessas informações de forma eficiente, segura e estruturada.
 
-A escolha do tema justifica-se pela necessidade real de informatização e automação dos processos administrativos em empresas do ramo de locação de veículos, que muitas vezes ainda utilizam métodos manuais ou planilhas desorganizadas. Nesse sentido, o projeto visa modelar um banco de dados relacional capaz de atender às principais demandas operacionais da locadora, oferecendo uma base sólida para futuras integrações com sistemas de front-end e relatórios gerenciais.
+A escolha do tema justifica-se pela necessidade real de informatização e automação dos processos administrativos em empreendimentos do ramo de locação de filmes, que muitas vezes ainda utilizam métodos manuais ou planilhas desorganizadas. Nesse sentido, o projeto visa modelar um banco de dados relacional capaz de atender às principais demandas operacionais da locadora, oferecendo uma base sólida para futuras integrações com sistemas de front-end e relatórios gerenciais.
 
-O principal objetivo do projeto é desenvolver e documentar a estrutura de um banco de dados relacional completo, incluindo o levantamento de requisitos, o modelo entidade-relacionamento (MER), o modelo lógico e a implementação física das tabelas. O sistema proposto deve permitir o gerenciamento eficiente de clientes, veículos, contratos de locação, formas de pagamento e histórico de transações, contribuindo assim para a modernização dos processos internos da empresa.
+O principal objetivo do projeto é desenvolver e documentar a estrutura de um banco de dados relacional completo, incluindo o levantamento de requisitos, o modelo entidade-relacionamento (MER), o modelo lógico e a implementação física das tabelas. O sistema proposto deve permitir o gerenciamento eficiente de clientes, filmes e locação, contribuindo assim para a modernização dos processos internos da empresa.
 
 A base de dados desenvolvida é composta por cinco tabelas principais: **clientes**, **endereco**, **filmes**, **funcionarios** e **locacao**. A estrutura proposta foi modelada com foco na normalização, integridade relacional e facilidade de uso, visando representar com fidelidade o funcionamento operacional de uma locadora de filmes.
 
@@ -85,8 +85,6 @@ O sistema de gestão para a locadora foi modelado com base em um **Diagrama Enti
 
 ### Diagrama Entidade-Relacionamento (DER)
 O diagrama abaixo representa graficamente o modelo lógico do banco de dados, ilustrando as entidades envolvidas, seus atributos e os relacionamentos entre elas:
-
-*(Imagem do DER seria inserida aqui)*
 
 ## Modelagem Lógica
 
@@ -198,8 +196,8 @@ INSERT INTO gerenciamento.filmes (titulo, disponivel, ano, categoria) VALUES
 ('Matrix', TRUE, 1999, 'Ficção Científica');
 
 INSERT INTO gerenciamento.locacao (data_inicio, data_final, valor, id_cliente, id_filme, id_funcionario, id_endereco) VALUES
-('2025-05-16', '2025-05-20', 15.00, 1, 1, 1, 1), -- Cliente 1 aluga "O Senhor dos Anéis" com funcionário 1
-('2025-05-16', '2025-05-18', 12.00, 2, 2, 2, 2); -- Cliente 2 aluga "Matrix" com funcionário 2
+('2025-05-16', '2025-05-20', 15.00, 1, 1, 1, 1), 
+('2025-05-16', '2025-05-18', 12.00, 2, 2, 2, 2); 
 
 -- Listar todas as locações com nome do cliente e título do filme
 SELECT 
