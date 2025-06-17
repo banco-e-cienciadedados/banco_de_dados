@@ -25,7 +25,7 @@
 
 ## Introdução
 
-A organização e o gerenciamento de dados são fundamentais para o bom funcionamento de qualquer empresa que lida com um grande volume de informações. No contexto das locadoras de files, por exemplo, é essencial manter o controle preciso sobre os filmes disponíveis, os clientes atendidos e as reservas realizadas. Com isso em vista, este projeto de Banco de Dados tem como foco o desenvolvimento de um sistema de gestão para uma locadora, com o objetivo de otimizar o armazenamento, a recuperação e a manipulação dessas informações de forma eficiente, segura e estruturada.
+A organização e o gerenciamento de dados são fundamentais para o bom funcionamento de qualquer empresa que lida com um grande volume de informações. No contexto das locadoras de filmes, por exemplo, é essencial manter o controle preciso sobre os filmes disponíveis, os clientes atendidos e as reservas realizadas. Com isso em vista, este projeto de Banco de Dados tem como foco o desenvolvimento de um sistema de gestão para uma locadora, com o objetivo de otimizar o armazenamento, a recuperação e a manipulação dessas informações de forma eficiente, segura e estruturada.
 
 A escolha do tema justifica-se pela necessidade real de informatização e automação dos processos administrativos em empreendimentos do ramo de locação de filmes, que muitas vezes ainda utilizam métodos manuais ou planilhas desorganizadas. Nesse sentido, o projeto visa modelar um banco de dados relacional capaz de atender às principais demandas operacionais da locadora, oferecendo uma base sólida para futuras integrações com sistemas de front-end e relatórios gerenciais.
 
